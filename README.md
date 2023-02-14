@@ -1,2 +1,3 @@
 # YangAndRust
-Update the rust learning record every day
+
+Here are some interesting rust projects！
