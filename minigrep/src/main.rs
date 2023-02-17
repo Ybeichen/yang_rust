@@ -3,9 +3,7 @@ use std::process;
 use minigrep::Config;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    let config = Config::build(&args).unwrap_or_else(|err| {  // 使用该函数可以自定义非panic，同时因为返回的是结构体，所以需要解包
+    let config = Config::build(env::args()).unwrap_or_else(|err| {  // 使用该函数可以自定义非panic，同时因为返回的是结构体，所以需要解包
         eprintln!("Problem parsing arguments: {err}");
         process::exit(1);  // 错误情况下不会再有额外大量的输出
     });
